@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilo.css">
+    <title>Noticias Selecciones</title>
+</head>
+<body>
+    <nav>
+            
+        <ul class="menu">
+            <img class="logo" src="/imagenes/logo.jfif" alt="" width="60" height="40">
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="/html/historia.html">Historia</a></li>
+            <li><a href="/html/reglas.html">Reglamento</a>
+                <ul class="submenu">
+                    <li><a href="/html/puntuacion.html">Puntuación</a></li>
+                </ul>
+            </li>
+            <li><a href="/html/seleccion.html">Selección</a>
+                <ul class="submenu">
+                    <li><a href="/html/seleccion_masculina.html">Masculino</a></li>
+                    <li><a href="/html/selección_femenina.html">Femenino</a></li>
+                </ul>
+            </li>
+            <li><a href="/html/sedes.html">Sedes</a>
+                <ul class="submenu">
+                    <li><a href="/html/medallero.html">Medallero Olímpico</a></li>    
+                </ul>
+            </li>
+            <li><a href="/html/contacto.html">Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav> 
+    <div>
+        <h1>Noticias selecciones</h1>
+<div class="news-container">
+    <div class="news-item">
+        <img src="/imagenes/jitsake.jpg" alt="Noticia 1" class="news-image">
+        <p>Jitske Visser espera con ansias sus quintos Juegos</p>
+    </div>
+    <div class="news-item">
+        <img src="/imagenes/kramer.jpg" alt="Noticia 2" class="news-image">
+        <p>Países Bajos retiene el título de baloncesto en silla de ruedas</p>
+    </div>
+    <div class="news-item">
+        <img src="/imagenes/gbr.jpg" alt="Noticia 3" class="news-image">
+        <p>Gran Bretaña logra su primera victoria en semifinales de baloncesto en silla de ruedas masculino en 28 años</p>
+    </div>
+    <div class="news-item">
+        <img src="/imagenes/usa.jpg" alt="Noticia 4" class="news-image">
+        <p>Estados Unidos y Países Bajos buscan defender sus títulos de baloncesto en silla de ruedas</p>
+    </div>
+    <div class="news-item">
+        <img src="/imagenes/noticia5.jpg" alt="Noticia 5" class="news-image">
+        <p>Noticia 5: Entrenamientos intensivos de los equipos.</p>
+    </div>
+    <div class="news-item">
+        <img src="/imagenes/noticia6.jpg" alt="Noticia 6" class="news-image">
+        <p>Noticia 6: Estrellas destacadas del torneo.</p>
+    </div>
+    <div class="news-item">
+        <img src="/imagenes/noticia7.jpg" alt="Noticia 7" class="news-image">
+        <p>Noticia 7: Sedes confirmadas para los partidos.</p>
+    </div>
+    <div class="news-item">
+        <img src="/imagenes/noticia8.jpg" alt="Noticia 8" class="news-image">
+        <p>Noticia 8: Historia del baloncesto en silla de ruedas.</p>
+    </div>
+    <div class="news-item">
+        <img src="/imagenes/noticia9.jpg" alt="Noticia 9" class="news-image">
+        <p>Noticia 9: Reglas específicas del torneo.</p>
+    </div>
+    <div class="news-item">
+        <img src="/imagenes/noticia10.jpg" alt="Noticia 10" class="news-image">
+        <p>Noticia 10: Expectativas para París 2024.</p>
+    </div>
+</div>
+
+<style>
+    .news-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+    }
+    .news-item {
+        flex: 1 1 calc(25% - 16px);
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .news-image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    @media (max-width: 768px) {
+        .news-item {
+            flex: 1 1 calc(50% - 16px);
+        }
+    }
+    @media (max-width: 480px) {
+        .news-item {
+            flex: 1 1 100%;
+        }
+    }
+</style>
+    </div>
+    <script src="/js/menu.js"></script> 
+</body>
+</html>

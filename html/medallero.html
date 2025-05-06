@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/estilo.css">
+    <title>Medallero</title>
+</head>
+<body>
+    <header>       
+        <nav>
+            <ul class="menu">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/html/historia.html">Historia</a></li>
+                <li><a href="/html/reglas.html">Reglamento</a>
+                    <ul class="submenu">
+                        <li><a href="/html/puntuacion.html">Puntuación</a></li>
+                    </ul>
+                </li>
+                <li><a href="/html/seleccion.html">Selección</a>
+                    <ul class="submenu">
+                        <li><a href="/html/seleccion_masculina.html">Masculino</a></li>
+                        <li><a href="/html/selección_femenina.html">Femenino</a></li>
+                    </ul>
+                </li>
+                <li><a href="/html/sedes.html">Sedes</a>
+                    <ul class="submenu">
+                        <li><a href="/html/medallero.html">Medallero Olímpico</a></li>    
+                    </ul>
+                </li>
+                <li><a href="/html/contacto.html">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>  
+    </header>
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>Rank</th>
+                <th>Pais</th>
+                <th>Abreviatura</th>
+                <th><img src="/imagenes/Gold_medal.svg.webp" alt=""></th>
+                <th><img src="/imagenes/Silver_medal.svg.webp" alt=""></th>
+                <th><img src="/imagenes/Bronze_medal.svg.webp" alt=""></th>
+                <th>total</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Estados Unidos</td>
+                <td><img src="/imagenes/Flag_of_the_United_States.svg.webp" alt="" height="15px" width="25px" > USA</td>
+                <td>14</td>
+                <td>3</td>
+                <td>8</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Canadá</td>
+                <td><img src="/imagenes/canada.jfif" alt=""  height="15px" width="25px"> CAN</td>
+                <td>6</td>
+                <td>1</td>
+                <td>1</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Israel</td>
+                <td><img src="/imagenes/israel.png" alt="Israel" height="15px" width="25px"> ISR</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Paises Bajos</td>
+                <td><img src="/imagenes/bandera-holanda.png" alt="Holanda" height="15px" width="25px"> NED</td>
+                <td>3</td>
+                <td>6</td>
+                <td>4</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Australia</td>
+                <td><img src="/imagenes/australia.png" alt="Australia" height="15" width="25"> AUS</td>
+                <td>2</td>
+                <td>5</td>
+                <td>1</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Alemania Occidental</td>
+                <td><img src="/imagenes/alemania.png" alt="Alemania" height="15" width="25"> RFA</td>
+                <td>2</td>
+                <td>2</td>
+                <td>0</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Alemania</td>
+                <td><img src="/imagenes/alemania.png" alt="Alemania" height="15" width="25"> GER</td>
+                <td>1</td>
+                <td>3</td>
+                <td>1</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Argentina</td>
+                <td><img src="/imagenes/argentina.png" alt="Argentina" height="15" width="25"> ARG</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Francia</td>
+                <td><img src="/imagenes/bandera-francia.png" alt="Francia" height="15" width="25"> FRA</td>
+                <td>1</td>
+                <td>0</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Reino Unido</td>
+                <td><img src="/imagenes/bandera-uk.png" alt="Reino Unido" height="15" width="25"> GB</td>
+                <td>0</td>
+                <td>4</td>
+                <td>6</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Japon</td>
+                <td><img src="/imagenes/bandera-japon.png" alt="Japon" height="15" width="25"> JPN</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>China</td>
+                <td><img src="/imagenes/bandera-china.png" alt="China" height="15" width="25"> CHN</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Jamaica</td>
+                <td><img src="/imagenes/bandera-jamaica.png" alt="Jamaica" height="15" width="25"> JAM</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>España</td>
+                <td><img src="/imagenes/bandera-españa.png" alt="España" height="15" width="25"> ESP</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Suecia</td>
+                <td><img src="/imagenes/bandera-suecia.png" alt="Suecia" height="15" width="25"> SWE</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td colspan="3">total</td>
+                <td>34</td>
+                <td>34</td>
+                <td>34</td>
+                <td>102</td>
+            </tr>
+        </table>
+        <div class=" circulo" >
+            <h3>Total medallas por paises</h3>
+            <canvas id="grafica"></canvas>
+        </div>
+        <div class="barras">
+            <h3>Top 8 paises con más medallas</h3>
+            <canvas id="barras"></canvas>
+        </div>  
+    </div> 
+    <script src="/js/script.js"></script>
+    <script src="/js/menu.js"></script>
+</body>
+</html>
