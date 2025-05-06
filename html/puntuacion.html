@@ -1,87 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/estilo.css">
-    <title>Puntuación</title>
+    <title>Puntuación - Constructor de Equipo</title>
+   
 </head>
 <body>
-    <header>       
+    <header>
         <nav>
             <ul class="menu">
                 <li><a href="/index.html">Inicio</a></li>
                 <li><a href="/html/historia.html">Historia</a></li>
-                <li><a href="/html/reglas.html">Reglamento</a>
+                <li>
+                    <a href="/html/reglas.html">Reglamento</a>
                     <ul class="submenu">
                         <li><a href="/html/puntuacion.html">Puntuación</a></li>
                     </ul>
                 </li>
-                <li><a href="/html/seleccion.html">Selección</a>
+                <li>
+                    <a href="/html/seleccion.html">Selección</a>
                     <ul class="submenu">
                         <li><a href="/html/seleccion_masculina.html">Masculino</a></li>
-                        <li><a href="/html/selección_femenina.html">Femenino</a></li>
+                        <li><a href="/html/seleccion_femenina.html">Femenino</a></li>
                     </ul>
                 </li>
-                <li><a href="/html/sedes.html">Sedes</a>
+                <li>
+                    <a href="/html/sedes.html">Sedes</a>
                     <ul class="submenu">
-                        <li><a href="/html/medallero.html">Medallero Olímpico</a></li>    
+                        <li><a href="/html/medallero.html">Medallero Olímpico</a></li>
                     </ul>
                 </li>
                 <li><a href="/html/contacto.html">Contacto</a></li>
             </ul>
-            <div class="menu-toggle" id="menu-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
         </nav>  
     </header>
 
-    <h1>Constructor de Equipo</h1>
+    <main>
+        <h1>Constructor de Equipo</h1>
 
-    <div class="zona" id="banco">
-      <div class="jugador" draggable="true" data-puntos="1">
-        <img src="/imagenes/muñeco_1.png" alt="Clase 1" />
-        <div class="puntos">1</div>
-      </div>
-      <div class="jugador" draggable="true" data-puntos="1.5">
-        <img src="/imagenes/muñeco_2.png" alt="Clase 1.5" />
-        <div class="puntos">1.5</div>
-      </div>
-      <div class="jugador" draggable="true" data-puntos="2">
-        <img src="/imagenes/muñeco_3.png" alt="Clase 2" />
-        <div class="puntos">2</div>
-      </div>
-      <div class="jugador" draggable="true" data-puntos="2.5">
-        <img src="/imagenes/muñeco_4.png" alt="Clase 2.5" />
-        <div class="puntos">2.5</div>
-      </div>
-      <div class="jugador" draggable="true" data-puntos="3">
-        <img src="/imagenes/muñeco_5.png" alt="Clase 3" />
-        <div class="puntos">3</div>
-      </div>
-      <div class="jugador" draggable="true" data-puntos="3.5">
-        <img src="/imagenes/muñeco_6.png" alt="Clase 3.5" />
-        <div class="puntos">3.5</div>
-      </div>
-      <div class="jugador" draggable="true" data-puntos="4">
-        <img src="/imagenes/muñeco_7.png" alt="Clase 4" />
-        <div class="puntos">4</div>
-      </div>
-      <div class="jugador" draggable="true" data-puntos="4.5">
-        <img src="/imagenes/muñeco_8.png" alt="Clase 4.5" />
-        <div class="puntos">4.5</div>
-      </div>
-    </div>
-  
-    <div class="zona" id="cancha">
-      <h2>Tu Equipo (máximo 5 jugadores, 14 puntos)</h2>
-    </div>
-  
-    <div id="resultado">Puntos Totales: 0</div>
-  
+        <div class="zona" id="banco">
+            <div class="jugador" draggable="true" data-puntos="1">
+                <img src="/imagenes/muñeco_1.png" alt="Jugador Clase 1">
+                <div class="puntos">1</div>
+            </div>
+            <div class="jugador" draggable="true" data-puntos="1.5">
+                <img src="/imagenes/muñeco_2.png" alt="Jugador Clase 1.5">
+                <div class="puntos">1.5</div>
+            </div>
+            <div class="jugador" draggable="true" data-puntos="2">
+                <img src="/imagenes/muñeco_3.png" alt="Jugador Clase 2">
+                <div class="puntos">2</div>
+            </div>
+            <div class="jugador" draggable="true" data-puntos="2.5">
+                <img src="/imagenes/muñeco_4.png" alt="Jugador Clase 2.5">
+                <div class="puntos">2.5</div>
+            </div>
+            <div class="jugador" draggable="true" data-puntos="3">
+                <img src="/imagenes/muñeco_5.png" alt="Jugador Clase 3">
+                <div class="puntos">3</div>
+            </div>
+            <div class="jugador" draggable="true" data-puntos="3.5">
+                <img src="/imagenes/muñeco_6.png" alt="Jugador Clase 3.5">
+                <div class="puntos">3.5</div>
+            </div>
+            <div class="jugador" draggable="true" data-puntos="4">
+                <img src="/imagenes/muñeco_7.png" alt="Jugador Clase 4">
+                <div class="puntos">4</div>
+            </div>
+            <div class="jugador" draggable="true" data-puntos="4.5">
+                <img src="/imagenes/muñeco_8.png" alt="Jugador Clase 4.5">
+                <div class="puntos">4.5</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/puntuacion.js"></script>
     <script src="/js/menu.js"></script>
-    
 </body>
 </html>
