@@ -51,6 +51,7 @@
         display: flex;
     }
 }
+
 @media (max-width: 768px) {
     /* Hacer que la tabla se desplace horizontalmente en pantallas pequeñas */
     .table-wrapper {
