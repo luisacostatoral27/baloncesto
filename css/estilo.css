@@ -285,7 +285,41 @@ footer {
   }
 
 }
+@media (min-width: 1025px) and (max-width: 2440px) {
+  .carousel-section {
+    max-width: 80%;
+    padding: 20px;
+  }
+  .carousel{
+  width: 60%;
+  }
+  .noticias-principales {
+    max-width: 60%;
+    padding: 20px;
+  }
 
+  .side-sections {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .calendario, .derecho {
+    position: absolute;
+    width: 25%;
+    height: auto 200px;
+    padding: 20px;
+  }
+
+  #calendar {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  p {
+    padding: 20px;
+  }
+}
 @media (max-width: 768px) {
   .carousel-section {
     max-width: 100%;
