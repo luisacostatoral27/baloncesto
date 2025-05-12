@@ -88,6 +88,7 @@ ul {
         flex: 1 1 calc(33.33% - 20px); 
         height: 500px; 
         padding: 20px;
+        width: 500px;
     }
 
     .popup-content {
