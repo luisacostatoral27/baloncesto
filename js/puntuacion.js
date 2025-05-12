@@ -1,4 +1,4 @@
-  const availableZone = document.getElementById('available-zone');
+  const availableZone = document.getElementById('available-zone'); 
     const selectedZone = document.getElementById('selected-zone');
     const totalDisplay = document.getElementById('total-points');
     const sumLine = document.getElementById('sum-line');
