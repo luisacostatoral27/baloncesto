@@ -12,6 +12,7 @@
       sumLine.textContent = values.length ? values.join(" + ") + " = " + total.toFixed(1) + " puntos" : "";
       message.textContent = "";
       message.className = "message";
+       
 
       if (total > 14) {
         message.textContent = "❌ No puedes superar los 14 puntos.";
@@ -23,6 +24,7 @@
         message.textContent = "✅ ¡Equipo completo!";
         message.classList.add("complete");
       }
+     
     }
 
     function resetEquipo() {
