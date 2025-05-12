@@ -54,7 +54,7 @@
         border: 5px solid #000000;
         border-radius: 20px;
     }
-    @media (min-width: 1024px) and (max-width: 1440px) {
+    @media (min-width: 1024px) and (max-width: 2440px) {
     .gallery {
         grid-template-columns: repeat(3, 1fr); /* 3 columnas en laptops */
         gap: 20px;
