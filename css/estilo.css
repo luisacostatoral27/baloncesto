@@ -258,6 +258,7 @@ p{
 footer {
   background-color: #000000;
 }
+
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 1024px) {
   .carousel-section {
