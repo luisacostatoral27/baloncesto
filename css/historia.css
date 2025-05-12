@@ -84,5 +84,39 @@ h1{
     transform: scale(1.05); /* Efecto de agrandamiento */
     transition: 0.3s ease-in-out;
 }
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .timeline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Mejor centrado */
+        gap: 30px; /* Espacio uniforme */
+        padding: 30px;
+    }
+
+    .timeline-item {
+        flex: 0 0 250px; /* Tamaño fijo en laptops */
+        max-width: 250px;
+        min-width: 220px;
+        margin: 15px;
+    }
+
+    .timeline-item::before {
+        display: none; /* Opcional: elimina línea de conexión que puede verse mal en laptops */
+    }
+
+    .timeline-content {
+        background: #FFCC00;
+        padding: 20px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.4em;
+    }
+
+    .timeline-content p {
+        font-size: 1em;
+    }
+}
+
 
 
