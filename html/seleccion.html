@@ -8,23 +8,22 @@
 </head>
 <body>
     <nav>
-            
-        <ul class="menu">
-             <img class="logo" src="/imagenes/image.png" alt="" width="60" height="40">
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/html/historia.html">Historia</a></li>
-            <li><a href="/html/reglas.html">Reglamento</a>
-                <ul class="submenu">
-                    <li><a href="/html/puntuacion.html">Puntuación</a></li>
-                </ul>
-            </li>
-            <li><a href="/html/otra_modalidad.html">Modalidad 3x3</a></li>
-            <li><a href="/html/seleccion.html">Selección</a>
-                <ul class="submenu">
-                    <li><a href="/html/seleccion_masculina.html">Masculino</a></li>
-                    <li><a href="/html/selección_femenina.html">Femenino</a></li>
-                </ul>
-            </li>
+        <img class="logo" src="/imagenes/image.png" alt="Logo del sitio" width="60" height="40">
+            <ul class="menu">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/html/historia.html">Historia</a></li>
+                <li><a href="/html/reglas.html">Reglamento</a>
+                    <ul class="submenu">
+                        <li><a href="/html/puntuacion.html">Puntuación</a></li>
+                    </ul>
+                </li>
+                <li><a href="/html/otra_modalidad.html">Modalidad 3x3</a></li>
+                <li><a href="/html/seleccion.html">Selección</a>
+                    <ul class="submenu">
+                        <li><a href="/html/seleccion_masculina.html">Masculino</a></li>
+                        <li><a href="/html/selección_femenina.html">Femenino</a></li>
+                    </ul>
+                </li>
             <li><a href="/html/sedes.html">Sedes</a>
                 <ul class="submenu">
                     <li><a href="/html/medallero.html">Medallero Olímpico</a></li>    
@@ -81,8 +80,60 @@
         <img src="/imagenes/noticia10.jpg" alt="Noticia 10" class="news-image">
         <p>Noticia 10: Expectativas para París 2024.</p>
     </div>
-</div>
-
+    <div class="marcador-container">
+        <h1>Marcador de Baloncesto</h1>
+    
+        <div class="teams">
+          <input type="text" id="nameA" placeholder="Equipo A" />
+          <span id="scoreA">0</span>
+          <button onclick="addPoints('A', 1)">+1</button>
+          <button onclick="addPoints('A', 2)">+2</button>
+          <button onclick="addPoints('A', 3)">+3</button>
+        </div>
+    
+        <div class="teams">
+          <input type="text" id="nameB" placeholder="Equipo B" />
+          <span id="scoreB">0</span>
+          <button onclick="addPoints('B', 1)">+1</button>
+          <button onclick="addPoints('B', 2)">+2</button>
+          <button onclick="addPoints('B', 3)">+3</button>
+        </div>
+    
+        <div class="controls">
+          <button onclick="nextQuarter()">▶ Terminar Cuarto</button>
+          <button onclick="resetGame()">🔄 Reiniciar</button>
+        </div>
+    
+        <div class="history">
+          <h3>Historial por Cuartos</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Cuarto</th>
+                <th>Equipo A</th>
+                <th>Equipo B</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </div>
+    
+        <div class="final-score">
+          <h3>Resultado Final</h3>
+          <p><span id="finalA">0</span> - <span id="finalB">0</span></p>
+        </div>
+    
+        <div class="quarter-summary">
+          <h3>Resumen por Cuarto</h3>
+          <div id="quarterSummaryList"></div>
+        </div>
+    
+        <div class="log">
+          <h3>Historial de Cambios</h3>
+          <ul id="changeLog"></ul>
+        </div>
+      </div>
+    </div>    
 <style>
     .news-container {
         display: flex;
@@ -94,12 +145,138 @@
         flex: 1 1 calc(25% - 16px);
         box-sizing: border-box;
         text-align: center;
+        object-fit: cover;
     }
     .news-image {
         width: 100%;
         height: auto;
         border-radius: 5px;
+        object-fit: cover;
     }
+    .marcador-container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    align-items: left;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  /* ===== Equipos ===== */
+  .teams {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+  }
+  
+  .teams input {
+    flex: 1 1 150px;
+    padding: 8px;
+    font-size: 1rem;
+  }
+  
+  .teams span {
+    font-size: 1.8rem;
+    min-width: 60px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .teams button {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .teams button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* ===== Botones de control ===== */
+  .controls {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .controls button:hover {
+    background-color: #1e7e34;
+  }
+  
+  /* ===== Tabla de historial ===== */
+  .history table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .history th, .history td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .history input {
+    width: 60px;
+    padding: 4px;
+    text-align: center;
+  }
+  
+  /* ===== Resultado final ===== */
+  .final-score {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .final-score span {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  /* ===== Resumen por cuarto ===== */
+  .quarter-summary {
+    margin-top: 25px;
+  }
+  
+  .quarter-summary p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+  }
+  
+  /* ===== Historial de cambios ===== */
+  .log {
+    margin-top: 25px;
+  }
+  
+  .log ul {
+    padding-left: 20px;
+    font-size: 0.9rem;
+  }
+
     @media (max-width: 768px) {
         .news-item {
             flex: 1 1 calc(50% - 16px);
@@ -113,5 +290,6 @@
 </style>
     </div>
     <script src="/js/menu.js"></script> 
+    <script src="/js/marcador.js"></script>
 </body>
 </html>
