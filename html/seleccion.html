@@ -38,7 +38,7 @@
         </div>
     </nav> 
     <div>
-        <h1>Noticias selecciones</h1>
+        <h1>Noticias Relacionadas</h1>
 <div class="news-container">
     <div class="news-item">
         <img src="/imagenes/jitsake.jpg" alt="Noticia 1" class="news-image">
@@ -57,34 +57,27 @@
         <p>Estados Unidos y Países Bajos buscan defender sus títulos de baloncesto en silla de ruedas</p>
     </div>
     <div class="news-item">
-        <img src="/imagenes/noticia5.jpg" alt="Noticia 5" class="news-image">
-        <p>Noticia 5: Entrenamientos intensivos de los equipos.</p>
+        <img src="/imagenes/Bywater.jpg" alt="Noticia 5" class="news-image">
+        <p>El jugador de baloncesto en silla de ruedas británico Terry Bywater está compitiendo en sus séptimos Juegos Paralímpicos y está emocionado de ver el crecimiento del juego.</p>
     </div>
     <div class="news-item">
-        <img src="/imagenes/noticia6.jpg" alt="Noticia 6" class="news-image">
-        <p>Noticia 6: Estrellas destacadas del torneo.</p>
+        <img src="/imagenes/patrick.jpg" alt="Noticia 6" class="news-image">
+        <p>La leyenda del baloncesto en silla de ruedas Patrick Anderson anunció su retiro del equipo nacional después de representar a Canadá en seis Juegos Paralímpicos..</p>
     </div>
     <div class="news-item">
-        <img src="/imagenes/noticia7.jpg" alt="Noticia 7" class="news-image">
-        <p>Noticia 7: Sedes confirmadas para los partidos.</p>
+        <img src="/imagenes/argentina_ciegos.jpg" alt="Noticia 7" class="news-image">
+        <p>Argentina celebra su histórica victoria sobre Brasil en las semifinales de fútbol para ciegos</p>
     </div>
     <div class="news-item">
-        <img src="/imagenes/noticia8.jpg" alt="Noticia 8" class="news-image">
-        <p>Noticia 8: Historia del baloncesto en silla de ruedas.</p>
+        <img src="/imagenes/Sheetal.jpg" alt="Noticia 8" class="news-image">
+        <p>Sheetal Devi de India compite en la competencia de tiro con arco paralímpico de París 2024.</p>
     </div>
-    <div class="news-item">
-        <img src="/imagenes/noticia9.jpg" alt="Noticia 9" class="news-image">
-        <p>Noticia 9: Reglas específicas del torneo.</p>
-    </div>
-    <div class="news-item">
-        <img src="/imagenes/noticia10.jpg" alt="Noticia 10" class="news-image">
-        <p>Noticia 10: Expectativas para París 2024.</p>
-    </div>
+   
     <div class="marcador-container">
-        <h1>Marcador de Baloncesto</h1>
+        <h1>Resultado Masculino</h1>
     
         <div class="teams">
-          <input type="text" id="nameA" placeholder="Equipo A" />
+          <img src="/imagenes/Flag_of_the_United_States.svg.webp" width="70" height="50" alt="Bandera de Estados Unidos">
           <span id="scoreA">0</span>
           <button onclick="addPoints('A', 1)">+1</button>
           <button onclick="addPoints('A', 2)">+2</button>
@@ -92,7 +85,7 @@
         </div>
     
         <div class="teams">
-          <input type="text" id="nameB" placeholder="Equipo B" />
+          <img src="/imagenes/bandera-uk.png" width="70" height="50" alt="Bandera de Reino Unido">
           <span id="scoreB">0</span>
           <button onclick="addPoints('B', 1)">+1</button>
           <button onclick="addPoints('B', 2)">+2</button>
@@ -100,195 +93,45 @@
         </div>
     
         <div class="controls">
-          <button onclick="nextQuarter()">▶ Terminar Cuarto</button>
+          <button onclick="nextQuarter()">Resultado Final</button>
           <button onclick="resetGame()">🔄 Reiniciar</button>
         </div>
-    
-        <div class="history">
-          <h3>Historial por Cuartos</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Cuarto</th>
-                <th>Equipo A</th>
-                <th>Equipo B</th>
-              </tr>
-            </thead>
-            <tbody id="historyBody"></tbody>
-          </table>
-        </div>
-    
         <div class="final-score">
           <h3>Resultado Final</h3>
           <p><span id="finalA">0</span> - <span id="finalB">0</span></p>
         </div>
+      </div>
+      <div class="marcador-container">
+        <h1>Resultado Femenino</h1>
     
-        <div class="quarter-summary">
-          <h3>Resumen por Cuarto</h3>
-          <div id="quarterSummaryList"></div>
+        <div class="teams">
+         <img src="/imagenes/Flag_of_the_United_States.svg.webp" alt="Bandera de Estados Unidos" width="70" height="50">
+          <span id="scoreC">0</span>
+          <button onclick="addPoints('C', 1)">+1</button>
+          <button onclick="addPoints('C', 2)">+2</button>
+          <button onclick="addPoints('C', 3)">+3</button>
         </div>
     
-        <div class="log">
-          <h3>Historial de Cambios</h3>
-          <ul id="changeLog"></ul>
+        <div class="teams">
+            <img src="/imagenes/bandera-holanda.png" alt="Bandera de Países Bajos" width="70" height="50">
+          <span id="scoreD">0</span>
+          <button onclick="addPoints('D', 1)">+1</button>
+          <button onclick="addPoints('D', 2)">+2</button>
+          <button onclick="addPoints('D', 3)">+3</button>
+        </div>
+    
+        <div class="controls">
+          <button onclick="nextQuarter()">Restultado final</button>
+          <button onclick="resetGame()">🔄 Reiniciar</button>
+        </div>
+  
+    
+        <div class="final-score">
+          <h3>Resultado Final</h3>
+          <p><span id="finalC">0</span> - <span id="finalD">0</span></p>
         </div>
       </div>
-    </div>    
-<style>
-    .news-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        justify-content: center;
-    }
-    .news-item {
-        flex: 1 1 calc(25% - 16px);
-        box-sizing: border-box;
-        text-align: center;
-        object-fit: cover;
-    }
-    .news-image {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-    .marcador-container {
-    max-width: 1000px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    align-items: left;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2rem;
-  }
-  
-  /* ===== Equipos ===== */
-  .teams {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 10px 0;
-    gap: 10px;
-  }
-  
-  .teams input {
-    flex: 1 1 150px;
-    padding: 8px;
-    font-size: 1rem;
-  }
-  
-  .teams span {
-    font-size: 1.8rem;
-    min-width: 60px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .teams button {
-    padding: 8px 12px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .teams button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* ===== Botones de control ===== */
-  .controls {
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .controls button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    background-color: #28a745;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .controls button:hover {
-    background-color: #1e7e34;
-  }
-  
-  /* ===== Tabla de historial ===== */
-  .history table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  .history th, .history td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .history input {
-    width: 60px;
-    padding: 4px;
-    text-align: center;
-  }
-  
-  /* ===== Resultado final ===== */
-  .final-score {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .final-score span {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  /* ===== Resumen por cuarto ===== */
-  .quarter-summary {
-    margin-top: 25px;
-  }
-  
-  .quarter-summary p {
-    margin: 4px 0;
-    font-size: 0.95rem;
-  }
-  
-  /* ===== Historial de cambios ===== */
-  .log {
-    margin-top: 25px;
-  }
-  
-  .log ul {
-    padding-left: 20px;
-    font-size: 0.9rem;
-  }
-
-    @media (max-width: 768px) {
-        .news-item {
-            flex: 1 1 calc(50% - 16px);
-        }
-    }
-    @media (max-width: 480px) {
-        .news-item {
-            flex: 1 1 100%;
-        }
-    }
-</style>
-    </div>
+         
     <script src="/js/menu.js"></script> 
     <script src="/js/marcador.js"></script>
 </body>
