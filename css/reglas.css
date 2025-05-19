@@ -68,4 +68,31 @@ ul {
     font-weight: bold;
     cursor: pointer;
 }
-
+/* Responsive para portátiles (ancho entre 1024px y 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    body {
+        font-size: 18px;
+    }
+    section {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 30px;
+    }
+.imagenes-container {
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.responsive-img {
+      flex: 0 1 calc(50% - 10px); /* se adapta sin exceder */
+        max-width: 100%;
+      object-fit: cover; /* esto recorta para igualar */
+    height: 300px; /* o cualquier altura fija */
+}
+    h2 {
+        font-size: 2.2em;
+    }
+    ul {
+        font-size: 1.1em;
+    }
+}

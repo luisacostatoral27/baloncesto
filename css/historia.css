@@ -84,7 +84,7 @@ h1{
     transform: scale(1.05); /* Efecto de agrandamiento */
     transition: 0.3s ease-in-out;
 }
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 2440px) {
     .timeline {
         display: flex;
         flex-wrap: wrap;
