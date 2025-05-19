@@ -98,19 +98,19 @@ function renderHistory() {
 }
 
 function crearInput(entry, key, index, descripcion) {
-  const input = document.createElement("input");
-  input.type = "number";
-  input.value = entry[key];
+  const input = document.createElement("input"); // Crear un nuevo elemento de entrada
+  input.type = "number"; // Establecer el tipo de entrada como número
+  input.value = entry[key]; // Establecer el valor inicial del input
   input.onchange = (e) => {
-    const old = entry[key];
+    const old = entry[key]; // Guardar el valor antiguo
     entry[key] = parseInt(e.target.value) || 0;
     updateTotals(index);
-    localStorage.setItem("history", JSON.stringify(history));
-    renderFinalScore();
-    renderQuarterSummary?.();
-    addToLog?.(`Editado ${descripcion} ${old} → ${entry[key]}`);
+    localStorage.setItem("history", JSON.stringify(history)); // Guardar el historial actualizado
+    renderFinalScore(); // Actualizar la puntuación final
+    renderQuarterSummary?.(); // Actualizar el resumen del cuarto
+    addToLog?.(`Editado ${descripcion} ${old} → ${entry[key]}`); // Agregar al registro de cambios
   };
-  return input;
+  return input; // Devolver el elemento de entrada creado
 }
 
 function updateTotals(startIndex) {
@@ -128,7 +128,7 @@ function updateTotals(startIndex) {
   scores.A = totalA;
   scores.B = totalB;
   scores.C = totalC;
-  scores.D = totalD;
+  scores.D = totalD; // Actualizar los puntajes de los equipos
   updateDisplay();
 }
 

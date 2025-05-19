@@ -12,8 +12,17 @@
   setInterval(() => moverCarrusel(1), 5000); // Cambia la imagen cada 5 segundos
   // Actualiza el carrusel al cargar la página
   updateCarousel(); 
+  
+// Muestra la imagen actual con un efecto de transición
+function updateCarousel() {
+  slides.forEach((slide, idx) => {
+    slide.style.opacity = idx === currentSlide ? "1" : "0"; // Muestra solo la imagen actual
+  });
 
-
+  [...indicators.children].forEach((dot, idx) => {
+    dot.classList.toggle("active", idx === currentSlide); // Actualiza los indicadores
+  });
+}
   function updateCarousel()  { 
     const container = document.getElementById("carousel-container"); // Selecciona el contenedor del carrusel
     container.style.transform = `translateX(-${currentSlide * 100}%)`; // Mueve el contenedor según el slide actual
@@ -49,6 +58,7 @@
       // Agrega el indicador al contenedor de indicadores
       indicators.appendChild(dot); 
     }
+    
   }
 
   
