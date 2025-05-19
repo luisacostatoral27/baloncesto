@@ -127,6 +127,76 @@
   <div class="total">Total: <span id="total-points">0</span> / 14 Puntos</div>
   <div class="message" id="message"></div>
   <button onclick="resetEquipo()">Reiniciar equipo</button>
+  <!-- Popup Modal -->
+  <div id="popup-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); align-items:center; justify-content:center;">
+    <div style="background:#fff; padding:30px 20px; border-radius:8px; max-width:320px; margin:auto; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.2);">
+      <span id="popup-message" style="font-size:1.1em; color:#333;"></span>
+      <br><br>
+      <button onclick="document.getElementById('popup-modal').style.display='none'" style="padding:6px 18px; border:none; background:#0078d7; color:#fff; border-radius:4px; cursor:pointer;">Cerrar</button>
+    </div>
+  </div>
+  <script>
+  function showPopup(message) {
+    document.getElementById('popup-message').textContent = message;
+    document.getElementById('popup-modal').style.display = 'flex';
+  }
+
+  // Hook into your drag/drop logic
+  document.addEventListener('DOMContentLoaded', function() {
+    const selectedZone = document.getElementById('selected-zone');
+    const availableZone = document.getElementById('available-zone');
+    const totalPointsSpan = document.getElementById('total-points');
+    const maxPlayers = 5;
+    const maxPoints = 14;
+
+    // Helper to get current team state
+    function getTeamState() {
+      const players = selectedZone.querySelectorAll('.player');
+      let total = 0;
+      players.forEach(p => total += parseFloat(p.getAttribute('data-score')));
+      return { count: players.length, points: total };
+    }
+
+    // Listen for dragstart
+    availableZone.querySelectorAll('.player').forEach(player => {
+      player.addEventListener('dragstart', function(e) {
+        e.dataTransfer.setData('text/plain', player.outerHTML);
+        e.dataTransfer.effectAllowed = 'move';
+      });
+    });
+
+    // Allow drop
+    selectedZone.addEventListener('dragover', function(e) {
+      e.preventDefault();
+    });
+
+    selectedZone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      const data = e.dataTransfer.getData('text/plain');
+      const temp = document.createElement('div');
+      temp.innerHTML = data;
+      const player = temp.firstElementChild;
+      const score = parseFloat(player.getAttribute('data-score'));
+      const { count, points } = getTeamState();
+
+      if (count >= maxPlayers) {
+        showPopup('No puedes añadir más de 5 jugadores.');
+        return;
+      }
+      if (points + score > maxPoints) {
+        showPopup('No puedes exceder los 14 puntos en el equipo.');
+        return;
+      }
+      // Prevent duplicate players
+      const imgs = Array.from(selectedZone.querySelectorAll('img')).map(img => img.src);
+      if (imgs.includes(player.querySelector('img').src)) {
+       
+      }
+      selectedZone.appendChild(player);
+      totalPointsSpan.textContent = (points + score).toString();
+    });
+  });
+  </script>
    <footer>
             <p>&copy; 2023 Comité Paralímpico Internacional. Todos los derechos reservados.</p>
             <ul class="social-media">
