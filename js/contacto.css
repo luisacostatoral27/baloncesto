@@ -1,0 +1,113 @@
+/* Estilos básicos para la caja y formularios */
+.caja {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    
+}
+
+.formulario, .mapa {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto en gris oscuro */
+}
+.formulario h2, .mapa h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4CAF50; /* Verde para los títulos */
+}
+
+.formulario h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #FF5722; /* Naranja para los subtítulos */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555555; /* Color gris medio para las etiquetas */
+}
+
+
+form input, form select, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+/* Estilos para las categorías */
+.categorias {
+    display: flex;
+    gap: 5px;  /* Espacio entre las opciones */
+    align-items: center;  /* Centra las casillas y etiquetas verticalmente */
+}
+
+.categorias input {
+    margin-right: 5px; /* Espacio entre el checkbox y el texto */
+}
+/* Estilo para los botones de radio y las etiquetas */
+.sexo {
+    display: flex;
+    align-items: center;  /* Alinea los elementos verticalmente */
+}
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button[type="reset"] {
+    background-color: #f44336;
+}
+
+form button:hover {
+    opacity: 0.8;
+}
+
+/* Estilo para el mapa */
+.mapa iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    /* Convertir la caja en una columna en pantallas pequeñas */
+    .caja {
+        flex-direction: column;
+    }
+
+    /* Ajustar tamaño del mapa y formulario */
+    .formulario, .mapa {
+        flex: none;
+        width: 100%;
+    }
+
+    .mapa iframe {
+        height: 400px; /* Ajustar altura del mapa */
+    }
+
+    form input, form select, form textarea, form button {
+        font-size: 14px; /* Aumentar la legibilidad en pantallas pequeñas */
+    }
+
+    .formulario h2, .mapa h2 {
+        font-size: 20px; /* Reducir tamaño de los títulos */
+    }
+
+    .formulario h3 {
+        font-size: 16px; /* Reducir tamaño de subtítulo */
+    }
+}
+
+

@@ -1,0 +1,162 @@
+
+@media (max-width: 768px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+  
+    .menu li {
+      margin: 10px 0;
+    }
+  
+    .menu li a {
+      padding: 15px;
+      text-align: center;
+      display: block;
+    }
+  
+    .menu li:hover .submenu {
+      position: relative;
+      display: block;
+    }
+  
+    .menu-toggle {
+      display: flex;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 1001;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 5px;
+      padding: 5px;
+      transition: background-color 0.3s ease;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  }
+  
+  /* Tablas en móviles */
+  @media (max-width: 768px) {
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      width: 500px;
+    }
+  
+    #grafica, #barras {
+      width: 90%;
+    }
+  }
+  
+  /* Galería en móviles y tabletas */
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .flipper {
+      width: 100%;
+      height: 400px;
+    }
+  }
+  
+  /* Galería para móviles más pequeños */
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+  
+    .flipper {
+      width: 100%;
+      height: 520px;
+    }
+  }
+  
+  /* Historia (botones grandes en móviles) */
+  @media (max-width: 480px) {
+    form button {
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
+  
+  /* Ocultar logo en móviles */
+  @media (max-width: 480px) {
+    .logo {
+      visibility: hidden;
+    }
+  }
+  
+  /* Línea de tiempo en móviles */
+  @media (max-width: 768px) {
+    .timeline {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .timeline-item::before {
+      display: none;
+    }
+  }
+  
+  /* Reglamentos en móviles */
+  @media (max-width: 768px) {
+    section {
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #f4f4f4;
+      border: 2px solid #ff4500;
+      color: #333;
+    }
+  
+    h2 {
+      font-size: 1.5em;
+    }
+  
+    ul {
+      margin-left: 15px;
+    }
+  
+    footer {
+      padding: 8px;
+    }
+  }
+  
+  /* Reglamentos en móviles pequeños */
+  @media (max-width: 480px) {
+    section {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 1.2em;
+    }
+  }
+  
+  /* Escritorio */
+  @media (min-width: 1200px) {
+    section {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    footer {
+      font-size: 1.2em;
+    }
+  }
+  

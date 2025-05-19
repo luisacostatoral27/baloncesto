@@ -1,0 +1,155 @@
+   .news-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+    }
+    .news-item {
+        flex: 1 1 calc(25% - 16px);
+        box-sizing: border-box;
+        text-align: center;
+        object-fit: cover;
+    }
+    .news-image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+    .marcador-container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    align-items: left;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  /* ===== Equipos ===== */
+  .teams {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+  }
+  
+  .teams input {
+    flex: 1 1 150px;
+    padding: 8px;
+    font-size: 1rem;
+  }
+  
+  .teams span {
+    font-size: 1.8rem;
+    min-width: 60px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .teams button {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .teams button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* ===== Botones de control ===== */
+  .controls {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .controls button:hover {
+    background-color: #1e7e34;
+  }
+  
+  /* ===== Tabla de historial ===== */
+  .history table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .history th, .history td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .history input {
+    width: 60px;
+    padding: 4px;
+    text-align: center;
+  }
+  
+  /* ===== Resultado final ===== */
+  .final-score {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .final-score span {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  /* ===== Resumen por cuarto ===== */
+  .quarter-summary {
+    margin-top: 25px;
+  }
+  
+  .quarter-summary p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+  }
+  
+  /* ===== Historial de cambios ===== */
+  .log {
+    margin-top: 25px;
+  }
+  
+  .log ul {
+    padding-left: 20px;
+    font-size: 0.9rem;
+  }
+  span{
+    text-align: center;
+  }
+
+    @media (max-width: 768px) {
+        .news-item {
+            flex: 1 1 calc(50% - 16px);
+        }
+    }
+    @media (max-width: 480px) {
+        .news-item {
+            flex: 1 1 100%;
+        }
+    }
