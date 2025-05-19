@@ -368,5 +368,48 @@ footer p{
   }
   
 }
+/* --- RESPONSIVE PARA PORTÁTILES (entre 1025px y 1440px) --- */
+@media (min-width: 1025px) and (max-width: 2440px) {
+  .noticias-principales
+   {
+    max-width: 60%;
+    margin: 20px auto;
+  }
+  .carousel-wrapper {
+    max-width: 90%;
+  
+  }
+
+  .carousel img {
+    max-width: 110%;
+    height: auto;
+  }
+
+  .side-sections {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .calendario,
+  .derecho {
+    width: 25%;
+    padding: 18px;
+    font-size: 1rem;
+  }
+
+  .noticias-principales h2 {
+    font-size: 26px;
+  }
+
+  .noticias-principales iframe {
+    max-width: 95%;
+    height: 350px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    padding: 18px;
+  }
+}
 
 
