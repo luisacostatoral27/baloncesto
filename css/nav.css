@@ -1,4 +1,4 @@
-
+/* Estilos generales del menú */
 nav {
     background-color: #222; /* Fondo oscuro para el menú */
     color: white; /* Color de texto blanco */
@@ -117,15 +117,6 @@ nav {
     transform: rotate(-45deg) translate(5px, -5px); /* Rotación de la tercera barra */
 }
 
-/* --- Estilo para menú fijo en la parte superior --- */
-nav.fixed {
-    position: fixed; /* Fija el menú a la parte superior */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100; /* Para asegurar que quede por encima del contenido */
-    
-}
 
 
 

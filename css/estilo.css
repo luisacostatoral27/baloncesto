@@ -1,11 +1,13 @@
 @import url('/css/nav.css');
 @import url('/css/femenino.css');
 @import url('/css/contacto.css');
+@import url('/css/otra_modalidad.css');
 @import url('/css/medallero.css');
 @import url('/css/media.css');
 @import url('/css/historia.css');
 @import url('/css/reglas.css');
 @import url('/css/puntuacion.css');
+@import url('/css/seleccion.css');
 
 
     
@@ -23,7 +25,6 @@ body {
   color: #333333; /* Gris oscuro para el texto */
   background-color: #f4f4f4; /* Fondo gris claro */
 }
-
 
 .carousel-btn.prev {
   position: absolute;
@@ -78,8 +79,6 @@ body {
   margin: auto ;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
- 
-
 }
 
 .carousel-container {
@@ -87,9 +86,6 @@ body {
   transition: transform 0.7s ease-in-out; /* Transición suave */
   transform: translateX(0); /* Posición inicial del carrusel */
   width: 100%;
-
-  
-
 }
 
 .carousel-wrapper {
@@ -256,7 +252,23 @@ p{
 }
 
 footer {
-  background-color: #000000;
+  background-color: #c2c2c2;
+}
+footer p{
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+}
+.social-media{
+  display: flex;
+  justify-content: left;
+  margin-top: 10px;
+
+}
+
+.social-media li {
+  margin: 0 5px;
+  margin-bottom: 20px;
 }
 
 
@@ -278,55 +290,21 @@ footer {
   }
 
   .calendario, .derecho {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: auto;
     padding: 15px;
   }
-
 }
-@media (min-width: 1025px) and (max-width: 2440px) {
-  .carousel-section {
-    max-width: 80%;
-    padding: 20px;
-  }
-  .carousel{
-  width: 60%;
-  }
-  .noticias-principales {
-    max-width: 60%;
-    padding: 20px;
-  }
 
-  .side-sections {
-    flex-direction: row;
-    height: auto;
-  }
 
-  .calendario, .derecho {
-    position: absolute;
-    width: 25%;
-    height: auto 200px;
-    padding: 20px;
-  }
-
-  #calendar {
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
-  }
-
-  p {
-    padding: 20px;
-  }
-}
 @media (max-width: 768px) {
   .carousel-section {
     max-width: 100%;
     margin: 10px auto;
 
   }
-
+ 
   .noticias-principales {
     max-width: 100%;
     padding: 10px;
@@ -388,6 +366,7 @@ footer {
   .derecho ul li a {
     font-size: 14px;
   }
+  
 }
 
 
