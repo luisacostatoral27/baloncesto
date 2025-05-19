@@ -11,37 +11,43 @@ section {
     padding: 20px;
     margin-bottom: 20px;
 }
-section p{
+section p {
     text-align: left;
     padding-top: 10px;
 }
 
-/* Estilo para los títulos de las secciones */
+/* Títulos */
 h2 {
     color: #333;
 }
 
-/* Estilo para las listas de las secciones */
+/* Listas */
 ul {
     list-style-type: none;
     margin-left: 33px;
     text-align: justify;
     padding-top: 10px;
 }
+
+/* Contenedor de imágenes */
 .imagenes-container {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 
+/* Imágenes responsive por defecto (móviles) */
 .responsive-img {
-    max-width: 100%;
+    width: 90%;
+    max-width: 400px;
     height: auto;
-    flex: 1 1 calc(50% - 10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Popup */
 .popup {
     display: none;
     position: fixed;
@@ -68,30 +74,33 @@ ul {
     font-weight: bold;
     cursor: pointer;
 }
-/* Responsive para portátiles (ancho entre 1024px y 1440px) */
-@media (min-width: 1024px) and (max-width: 1440px) {
-    body {
-        font-size: 18px;
+
+/* Laptops y pantallas grandes */
+@media (min-width: 1024px) {
+    .imagenes-container {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: 0 30px;
     }
+
+    .responsive-img {
+        flex: 0 1 calc(50% - 20px);
+        height: 300px;
+        object-fit: cover;
+        max-width: 100%;
+    }
+
     section {
         max-width: 900px;
         margin: 30px auto;
         padding: 30px;
     }
-.imagenes-container {
-    flex-wrap: nowrap;
-    gap: 20px;
-    justify-content: space-between;
-}
-.responsive-img {
-      flex: 0 1 calc(50% - 10px); /* se adapta sin exceder */
-        max-width: 100%;
-      object-fit: cover; /* esto recorta para igualar */
-    height: 300px; /* o cualquier altura fija */
-}
+
     h2 {
         font-size: 2.2em;
     }
+
     ul {
         font-size: 1.1em;
     }
