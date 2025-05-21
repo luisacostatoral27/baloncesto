@@ -159,17 +159,16 @@ function addEvent(cell) {
 }
 function addEvent(cell) {
     const eventType = prompt('Ingrese el tipo de evento (entrenamiento o partido):').toLowerCase();
+
+    const day = cell.textContent.trim(); // Guarda el número del día
     if (eventType === 'entrenamiento') {
-    cell.style.backgroundColor = eventColors.type1;
-    cell.setAttribute('title', 'Entrenamiento');
+        cell.innerHTML = `${day} <span class="event-icon entrenamiento" title="Entrenamiento"><i class="fas fa-dumbbell"></i></span>`;
     } else if (eventType === 'partido') {
-    cell.style.backgroundColor = eventColors.type2;
-    cell.setAttribute('title', 'Partido');
+        cell.innerHTML = `${day} <span class="event-icon partido" title="Partido"><i class="fas fa-basketball-ball"></i></span>`;
     } else {
-    alert('¡Tipo de evento no válido!');
+        alert('¡Tipo de evento no válido!');
     }
 }
-
 monthSelect.addEventListener('change', () => {
     // Generar el calendario basado en el mes seleccionados
     generateCalendar(parseInt(monthSelect.value), parseInt(yearSelect.value));  // Generar el calendario basado en el mes seleccionados
