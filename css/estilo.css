@@ -235,12 +235,25 @@ p{
   margin-right: 5px;
 }
 
-.event-type-1 {
-  background-color: rgb(245, 0, 0);
+.event-icon {
+  margin-left: 5px;
+  font-size: 20px;
+  vertical-align: middle;
 }
 
-.event-type-2 {
-  background-color: rgb(4, 0, 250);
+.event-icon.partido i {
+   margin-right: 5px;
+   color: darkorange;
+
+}
+.icono-entrenamiento {
+  color: rgb(47, 6, 230); margin-right: 5px; font-size: 20px;
+}
+.icono-partido {
+  color: darkorange; margin-right: 5px; font-size: 20px;
+}
+.event-icon.entrenamiento i {
+  color: rgb(38, 2, 241);
 }
 
 .event-type-3{
