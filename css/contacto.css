@@ -17,6 +17,7 @@
     background-color: #ffffff; /* Fondo blanco */
     color: #333333; /* Texto en gris oscuro */
 }
+
 .formulario h2, .mapa h2 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -33,6 +34,7 @@ form label {
     display: block;
     margin-bottom: 5px;
     color: #555555; /* Color gris medio para las etiquetas */
+    height: 20px; /* Altura fija para las etiquetas */
 }
 
 
@@ -42,21 +44,30 @@ form input, form select, form textarea, form button {
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #ccc;
+
 }
 /* Estilos para las categorías */
 .categorias {
     display: flex;
-    gap: 5px;  /* Espacio entre las opciones */
     align-items: center;  /* Centra las casillas y etiquetas verticalmente */
+    margin-bottom: 15px; /* Espacio entre las categorías y el siguiente elemento */
+    justify-content: center; /* Espacio entre las casillas */
 }
+.categorias input[type="checkbox"] {
+    margin-right: 1px; /* Espacio entre la casilla y la etiqueta */
+    width: 100px; /* Ancho de la casilla */
 
-.categorias input {
-    margin-right: 5px; /* Espacio entre el checkbox y el texto */
+
 }
 /* Estilo para los botones de radio y las etiquetas */
 .sexo {
     display: flex;
     align-items: center;  /* Alinea los elementos verticalmente */
+   justify-content: center;
+}
+.sexo input[type="radio"] {
+    margin-right: 5px; /* Espacio entre el botón de radio y la etiqueta */
+    width: 100px; /* Ancho del botón de radio */
 }
 form button {
     background-color: #4CAF50;
@@ -77,8 +88,13 @@ form button:hover {
 .mapa iframe {
     width: 100%;
     max-width: 900px;
-    height: 500px;
+    height: 700px;
 }
+.formulario {
+    height: 700px; /* Igual al alto del iframe del mapa */
+    overflow-y: auto; /* Permite hacer scroll si el contenido se desborda */
+}
+
 
 /* Diseño responsive */
 @media (max-width: 768px) {
