@@ -17,5 +17,13 @@ closePopup.addEventListener('click', () => {
 window.addEventListener('click', (event) => {
     if (event.target === popup) {
         popup.style.display = 'none'; // Cierra el popup si se hace clic fuera de la imagen
+        
     }
+
 }); 
+// Agrega un evento de clic al botón de cerrar el popup
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        popup.style.display = 'none'; // Cierra el popup si se presiona la tecla Escape
+    }
+});

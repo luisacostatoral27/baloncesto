@@ -88,7 +88,7 @@ form button:hover {
 .mapa iframe {
     width: 100%;
     max-width: 900px;
-    height: 700px;
+    height: 650px;
 }
 .formulario {
     height: 700px; /* Igual al alto del iframe del mapa */
