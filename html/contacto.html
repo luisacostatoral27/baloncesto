@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/css/estilo.css">
     <title>Contacto</title>
 </head>
@@ -33,12 +34,12 @@
                 <li><a href="/html/contacto.html">Contacto</a></li>
             </ul>
             <div class="menu-toggle" id="menu-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <i class="fas fa-bars open-icon"></i>
+                <i class="fas fa-times close-icon"></i>
             </div>
         </nav>  
     </header>
+     <div id="google_translate_element" style="text-align: right; margin: 10px;" z-index="10000001"></div>
     <div class="caja">
         <div class="formulario">
             <h2>Ficha de inscripción</h2>
@@ -46,7 +47,7 @@
             <p>Si necesitas más información puedes enviarnos un email a escuelabaloncesto@hotmail.com.</p>
             <form action="#" method="post">
                 <label for="Nombre">👤 Nombre y Apellidos</label><br>
-                <input type="text" placeholder="Escriba su Nombre" required><br>
+                <input type="text" name="mombre" placeholder="Escriba su Nombre" required><br>
                 <label for=""> 📅 Fecha de Nacimiento</label><br>
                 <input type="date"><br>
                 <label for="dni">  DNI</label><br>
@@ -110,6 +111,7 @@
             <div class="mapa">
                 <h2>Nos puedes encontrar aquí</h2><br>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6070.503153781479!2d-3.6630567234675917!3d40.46969905241298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42293ef012b237%3A0xa79895f84dde129d!2zRnVuZGFjacOzbiBUYW1iacOpbg!5e0!3m2!1ses!2ses!4v1742312354353!5m2!1ses!2ses" width="900" height="650" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          
             </div>    
     </div>
      <footer>
@@ -118,5 +120,6 @@
             <a href="politica_privacidad.html" target="_blank">Política de Privacidad</a>
         </footer>
     <script src="/js/menu.js"></script>
+    <script src="/js/traductor.js"></script>
 </body>
 </html>
