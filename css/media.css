@@ -65,7 +65,7 @@
   }
   
   /* Galería en móviles y tabletas */
-  @media (max-width: 768px) {
+ @media (min-width: 768px) and (max-width: 1023px) {
     .gallery {
       grid-template-columns: repeat(3, 1fr);
     }
