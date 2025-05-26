@@ -16,6 +16,18 @@
         border-radius: 5px;
         object-fit: cover;
     }
+
+.news-image:hover {
+    transform: scale(1.05);
+}
+.news-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
     .marcador-container {
     max-width: 1000px;
     margin: auto;
@@ -118,6 +130,7 @@
   .final-score span {
     font-size: 2rem;
     font-weight: bold;
+    align-items: center;
   }
   
   /* ===== Resumen por cuarto ===== */
