@@ -1,37 +1,53 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle'); // Seleccionamos el ícono del menú hamburguesa
-    const menu = document.querySelector('.menu'); // Seleccionamos el menú desplegable
-    
-    // Inicializamos el estado del menú como cerrado (aria-expanded = false)
-    menuToggle.setAttribute('aria-expanded', 'false');
-
-    // Función que se ejecuta cuando el usuario hace clic en el ícono del menú hamburguesa
-    menuToggle.addEventListener('click', () => {
-        const isActive = menu.classList.toggle('active'); // Cambiamos la clase del menú para mostrarlo u ocultarlo
-        // Cambiamos el ícono del menú hamburguesa según el estado del menú
-        
-        // Cambiamos el atributo aria-expanded al abrir o cerrar el menú
-        menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-    });
-
-    // Añadimos funcionalidad para cerrar el menú al hacer clic en cualquier enlace de la lista
-    document.querySelectorAll('.menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('active'); // Cerramos el menú
-            menuToggle.setAttribute('aria-expanded', 'false'); // Actualizamos el estado del aria-expanded
-        });
-    });
-});
-// Añadimos funcionalidad para cerrar el menú al hacer clic fuera de él
-document.addEventListener('click', (event) => {
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.querySelector('.menu');
 
-    // Verificamos si el clic fue fuera del menú y del botón de menú
-    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-        menu.classList.remove('active'); // Cerramos el menú
-        menuToggle.setAttribute('aria-expanded', 'false'); // Actualizamos el estado del aria-expanded
-    }
+    // Estado inicial del botón hamburguesa
+    menuToggle.setAttribute('aria-expanded', 'false');
 
+    // Alternar visibilidad del menú
+    menuToggle.addEventListener('click', () => {
+        const isActive = menu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    });
+
+    // Cerrar menú al hacer clic en un enlace (excepto si hay submenú en responsive)
+    document.querySelectorAll('.menu a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const submenu = link.nextElementSibling;
+            const isMobile = window.innerWidth <= 768;
+
+            if (!(submenu && submenu.classList.contains('submenu') && isMobile)) {
+                menu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Mostrar submenús con el primer clic, permitir enlace con el segundo
+    document.querySelectorAll('.menu > li > a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const submenu = link.nextElementSibling;
+            const isMobile = window.innerWidth <= 768;
+
+            if (submenu && submenu.classList.contains('submenu') && isMobile) {
+                if (!submenu.classList.contains('show-submenu')) {
+                    e.preventDefault(); // Solo bloquear el primer clic
+                    submenu.classList.add('show-submenu');
+                }
+                // Segundo clic sigue el enlace
+            }
+        });
+    });
 });
-
