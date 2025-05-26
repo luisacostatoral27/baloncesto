@@ -15,7 +15,7 @@ nav {
 /* Logo del menú */
 .logo {
     align-items: center;
-    justify-content: start;
+    justify-content: start; /* Alineación del logo a la izquierda */
     display: flex;
     position: absolute;
     left: 20px; /* Alineación del logo a la izquierda */
@@ -35,7 +35,7 @@ nav {
 }
 
 .menu li {
-    position: relative; /* Cambiado a absolute para que el submenú se alinee correctamente */
+    position: relative; 
     margin: 0 15px;
 }
 
@@ -57,7 +57,7 @@ nav {
 .submenu {
     z-index: 1;
     display: none;
-    position: absolute; /* Cambiado a relative para que el submenú se alinee correctamente */
+    position: absolute; /* Posicionamiento absoluto para el submenú */
     background-color: #333;
     list-style: none;
     padding: 0;
@@ -118,8 +118,59 @@ nav {
 }
 
 
+/* Estilos para el menú con iconos FontAwesome */
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    z-index: 1001;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
 
+.menu-toggle .open-icon,
+.menu-toggle .close-icon {
+    color: white;
+    font-size: 24px;
+    display: none;
+}
 
+.menu-toggle .open-icon {
+    display: inline;
+}
 
-  
-  
+.menu-toggle.active .open-icon {
+    display: none;
+}
+
+.menu-toggle.active .close-icon {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .submenu {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        border-top: 1px solid #666;
+        padding-left: 10px;
+    }
+
+    .submenu.show-submenu {
+        display: flex;
+    }
+
+    .submenu li a {
+        padding: 10px 20px;
+    }
+}
