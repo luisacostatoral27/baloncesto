@@ -1,43 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/estilo.css">
-    <title>Videos de los mejores momentos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/estilo.css" />
+  <title>Videos de los mejores momentos</title>
 </head>
 <body>
-      <nav>
-            <img class="logo" src="/imagenes/image.png" alt="Logo del sitio" width="60" height="40">
-            <ul class="menu">
-                <li><a href="/index.html">Inicio</a></li>
-                <li><a href="/html/historia.html">Historia</a></li>
-                <li><a href="/html/reglas.html">Reglamento</a>
-                    <ul class="submenu">
-                        <li><a href="/html/puntuacion.html">Puntuación</a></li>
-                    </ul>
-                </li>
-                <li><a href="/html/otra_modalidad.html">Modalidad 3x3</a></li>
-                <li><a href="/html/seleccion.html">Selección</a>
-                    <ul class="submenu">
-                        <li><a href="/html/seleccion_masculina.html">Masculino</a></li>
-                        <li><a href="/html/selección_femenina.html">Femenino</a></li>
-                    </ul>
-                </li>
-                <li><a href="/html/sedes.html">Sedes</a>
-                    <ul class="submenu">
-                        <li><a href="/html/medallero.html">Medallero Olímpico</a></li>    
-                    </ul>
-                </li>
-                <li><a href="/html/mejores_momentos.html">Mejores Momentos</a></li>
-                <li><a href="/html/contacto.html">Contacto</a></li>
-            </ul>
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars open-icon"></i>
-                <i class="fas fa-times close-icon"></i>
-            </div>
-        </nav> 
-         <section class="momentos-container">
+  <nav>
+    <img class="logo" src="/imagenes/image.png" alt="Logo del sitio" width="60" height="40" />
+    <ul class="menu">
+      <li><a href="/index.html">Inicio</a></li>
+      <li><a href="/html/historia.html">Historia</a></li>
+      <li>
+        <a href="/html/reglas.html">Reglamento</a>
+        <ul class="submenu">
+          <li><a href="/html/puntuacion.html">Puntuación</a></li>
+        </ul>
+      </li>
+      <li><a href="/html/otra_modalidad.html">Modalidad 3x3</a></li>
+      <li>
+        <a href="/html/seleccion.html">Selección</a>
+        <ul class="submenu">
+          <li><a href="/html/seleccion_masculina.html">Masculino</a></li>
+          <li><a href="/html/selección_femenina.html">Femenino</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/html/sedes.html">Sedes</a>
+        <ul class="submenu">
+          <li><a href="/html/medallero.html">Medallero Olímpico</a></li>
+        </ul>
+      </li>
+      <li><a href="/html/mejores_momentos.html">Mejores Momentos</a></li>
+      <li><a href="/html/contacto.html">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars open-icon"></i>
+      <i class="fas fa-times close-icon"></i>
+    </div>
+  </nav>
+
+  <section class="momentos-container">
     <h2>🏅 Mejores Momentos Paralímpicos</h2>
 
     <!-- Buscador -->
@@ -47,13 +51,13 @@
         id="buscador"
         placeholder="Buscar..."
         onkeyup="buscar()"
-        style="padding: 10px; width: 50%; max-width: 400px; border-radius: 6px; border: 1px solid #ccc;"
       />
     </div>
 
     <!-- Galería dinámica -->
     <div id="galeria" class="momentos-galeria"></div>
   </section>
- <script src="/js/app.js"></script>
+
+  <script src="/js/app.js"></script>
 </body>
 </html>
