@@ -48,11 +48,42 @@ h2 {
   outline: none;
 }
 
+/* BOTÓN VOLVER */
+.btn-volver {
+  display: block;
+  margin: 0 auto 1.5rem;
+  padding: 10px 16px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #0056b3;
+}
+/* SELECTOR DE CATEGORÍAS */
+#categoriaSelect {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+#categoriaSelect:focus {
+  outline: none;
+  border-color: #003366;
+}
 /* VISTA INICIAL EN CUADRÍCULA */
 .momentos-galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
+  align-items: stretch; /* fuerza igual altura */
 }
 
 /* VISTA EN BÚSQUEDA COMO LISTA */
@@ -69,6 +100,9 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .momento:hover {
@@ -77,14 +111,16 @@ h2 {
 }
 
 .momento h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #003366;
   margin-bottom: 0.75rem;
+  min-height: 3.5rem; /* asegura alineación de títulos */
 }
 
 .momento p {
   font-size: 1rem;
   color: #444;
+  min-height: 3rem; /* asegura alineación de texto */
 }
 
 /* VIDEO EMBED */
@@ -93,6 +129,7 @@ h2 {
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 1rem;
+  height: 180px; /* Altura por defecto */
 }
 
 .iframe-container iframe {
@@ -108,15 +145,16 @@ h2 {
 }
 
 .iframe-container.grande {
-  height: 660px;
+  height: 6600000px;
 }
 
 /* MEDIA QUERIES */
 
-/* 📱 Móviles pequeños (hasta 480px) */
 @media (max-width: 480px) {
   #buscador {
     width: 90%;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 
   .iframe-container.pequeno {
@@ -140,7 +178,6 @@ h2 {
   }
 }
 
-/* 📱 Móviles grandes y tablets verticales (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   .iframe-container.pequeno {
     height: 160px;
@@ -151,7 +188,6 @@ h2 {
   }
 }
 
-/* 💻 Tablets horizontales y laptops pequeñas (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .iframe-container.pequeno {
     height: 200px;
@@ -162,7 +198,6 @@ h2 {
   }
 }
 
-/* 💻 Laptops medianas a grandes (1025px - 1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
   .iframe-container.pequeno {
     height: 220px;
@@ -173,7 +208,6 @@ h2 {
   }
 }
 
-/* 🖥️ Escritorios grandes (más de 1440px) */
 @media (min-width: 1441px) {
   .iframe-container.pequeno {
     height: 240px;
