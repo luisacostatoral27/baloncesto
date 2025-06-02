@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Momentos por Categoría</title>
+  <link rel="stylesheet" href="../css/estilo.css" />
+  <link rel="shortcut icon" href="/imagenes/favicon.ico" type="image/x-icon">
+</head>
+<body data-json="../data/momentos_categorias.json">
+  <nav>
+    <img class="logo" src="/imagenes/image.png" alt="Logo del sitio" width="60" height="40">
+    <ul class="menu">
+      <li><a href="/index.html">Inicio</a></li>
+      <li><a href="/html/historia.html">Historia</a></li>
+      <li><a href="/html/reglas.html">Reglamento</a>
+        <ul class="submenu">
+          <li><a href="/html/puntuacion.html">Puntuación</a></li>
+        </ul>
+      </li>
+      <li><a href="/html/otra_modalidad.html">Modalidad 3x3</a></li>
+      <li><a href="/html/seleccion.html">Selección</a>
+        <ul class="submenu">
+          <li><a href="/html/seleccion_masculina.html">Masculino</a></li>
+          <li><a href="/html/selección_femenina.html">Femenino</a></li>
+        </ul>
+      </li>
+      <li><a href="/html/sedes.html">Sedes</a>
+        <ul class="submenu">
+          <li><a href="/html/medallero.html">Medallero Olímpico</a></li>
+        </ul>
+      </li>
+      <li><a href="/html/mejores_momentos.html">Mejores Momentos</a>
+        <ul class="submenu">
+          <li><a href="/html/categoria.html">Por Categoría</a></li>
+        </ul>
+      </li>
+      <li><a href="/html/contacto.html">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars open-icon"></i>
+      <i class="fas fa-times close-icon"></i>
+    </div>
+  </nav>
+  <div id="google_translate_element" style="text-align: right; margin: 10px;" z-index="10000001"></div>
+  <section class="momentos-container">
+    <h2>🎯 Momentos por Categoría</h2>
+
+    <!-- Selector de categorías -->
+    <div id="selector-categorias" style="text-align:center; margin-bottom: 1.5rem;">
+      <label for="categoriaSelect" style="font-weight: bold;">Seleccionar categoría:</label>
+      <select id="categoriaSelect" onchange="seleccionarCategoria(this.value)" style="padding: 8px 12px; font-size: 1rem; margin-left: 10px;">
+        <option value="Todos">Todos</option>
+      </select>
+    </div>
+
+    <!-- Galería -->
+    <div id="galeria" class="momentos-galeria"></div>
+  </section>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
