@@ -166,6 +166,24 @@
                 }
             });
         });
+        
+document.addEventListener('click', function(event) {
+    const openBtn = document.querySelector('.faq-question.active');
+    if (openBtn && !event.target.classList.contains('faq-question')) {
+        openBtn.classList.remove('active');
+        openBtn.nextElementSibling.style.display = 'none';
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const openBtn = document.querySelector('.faq-question.active');
+        if (openBtn) {
+            openBtn.classList.remove('active');
+            openBtn.nextElementSibling.style.display = 'none';
+        }
+    }
+});
     </script>
     <style>
     .faq {
