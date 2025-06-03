@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="shortcut icon" href="/imagenes/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/estilo.css">
     <title>Contacto</title>
 </head>
@@ -31,7 +32,11 @@
                         <li><a href="/html/medallero.html">Medallero Olímpico</a></li>    
                     </ul>
                 </li>
-                <li><a href="/html/mejores_momentos.html">Mejores Momentos</a></li>
+                <li><a href="/html/mejores_momentos.html">Mejores Momentos</a>
+                    <ul class="submenu">
+                        <li><a href="/html/categoria.html">Por Categoría</a></li>
+                    </ul>
+                </li>
                 <li><a href="/html/contacto.html">Contacto</a></li>
             </ul>
             <div class="menu-toggle" id="menu-toggle">
@@ -45,19 +50,19 @@
         <div class="formulario">
             <h2>Ficha de inscripción</h2>
             <h3> 📋 Formulario de inscripción de la Escuela 2025-26</h3>
-            <p>Si necesitas más información puedes enviarnos un email a escuelabaloncesto@hotmail.com.</p>
-            <form action="#" method="post">
-                <label for="Nombre">👤 Nombre y Apellidos</label><br>
-                <input type="text" name="mombre" placeholder="Escriba su Nombre" required><br>
-                <label for=""> 📅 Fecha de Nacimiento</label><br>
-                <input type="date"><br>
-                <label for="dni">  DNI</label><br>
-                <input type="text" name="dni" id="dni" placeholder="Introduzca su DNI" pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra" required min="9" maxlength="10"><br>
-                <label for="direccion">🏠 Dirección</label><br>
-                <input type="text" placeholder="Introduce tu dirección" required><br>
-                <label for="Localidad"> &#128205; Localidad</label><br>
-                <input type="text"><br>
-                <label for="provincia">🌍 Provincia</label><br>
+                <p>Si necesitas más información puedes enviarnos un email a escuelabaloncesto@hotmail.com.</p>
+                <form id="formulario-contacto">
+                    <label for="Nombre">👤 Nombre y Apellidos</label><br>
+                    <input type="text" name="mombre" placeholder="Escriba su Nombre" required><br>
+                    <label for=""> 📅 Fecha de Nacimiento</label><br>
+                    <input type="date"><br>
+                    <label for="dni">  DNI</label><br>
+                    <input type="text" name="dni" id="dni" placeholder="Introduzca su DNI" pattern="[0-9]{8}[A-Za-z]{1}" title="Debe poner 8 números y una letra" required min="9" maxlength="10"><br>
+                    <label for="direccion">🏠 Dirección</label><br>
+                    <input type="text" placeholder="Introduce tu dirección" required><br>
+                    <label for="Localidad"> &#128205; Localidad</label><br>
+                    <input type="text"><br>
+                    <label for="provincia">🌍 Provincia</label><br>
                 <select name="provincia" id="">
                     <option value="1">Seleccione su provincia</option>
                     <option value="2">Madrid</option>
@@ -105,6 +110,13 @@
                 <textarea name="comentarios" rows="10" cols="80">Escribe aqui tus observaciones</textarea><br><br>
                 <span> He leído y acepto la política de privacidad y cesión de datos de la Escuela de Baloncesto en Silla de Ruedas</span><br><br>
                 <input type="checkbox">
+                <label for="formato">📁 Formato del archivo:</label><br>
+                    <select id="formato">
+                    <option value="txt">.txt</option>
+                    <option value="csv">.csv</option>
+                    <option value="json">.json</option>
+                    </select><br><br>
+                <span>Al enviar este formulario, acepto que mis datos sean almacenados y utilizados para la gestión de la inscripción.</span><br><br>
                 <button type="submit">✅ Enviar</button>
                 <button type="reset">🔄 Resetear</button>
             </form>
@@ -122,5 +134,62 @@
         </footer>
     <script src="/js/menu.js"></script>
     <script src="/js/traductor.js"></script>
+    <script>
+        // JS para generar archivo externo con datos del formulario de contacto
+
+document.getElementById("formulario-contacto").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formato = document.getElementById("formato").value;
+
+  const data = {
+    nombre: form.querySelector('input[name="mombre"]').value,
+    fechaNacimiento: form.querySelector('input[type="date"]').value,
+    dni: form.querySelector('input[name="dni"]').value,
+    direccion: form.querySelector('input[placeholder*="dirección"]').value,
+    localidad: form.querySelectorAll('input')[4].value,
+    provincia: form.querySelector('select[name="provincia"] option:checked').textContent,
+    telefono: form.querySelectorAll('input[type="tel"]')[0].value,
+    email: form.querySelectorAll('input[type="email"]')[0].value,
+    categorias: [...form.querySelectorAll('.categorias input:checked')].map(c => c.value).join(', '),
+    sexo: form.querySelector('input[name="fav_language"]:checked')?.value || 'No seleccionado',
+    discapacidad: form.querySelector('select[name="discapacidad"] option:checked').textContent,
+    grado: form.querySelectorAll('input[type="text"]')[2].value,
+    comentarios: form.querySelector('textarea').value
+  };
+
+  let contenido = '';
+  let extension = 'txt';
+
+  if (formato === 'json') {
+    contenido = JSON.stringify(data, null, 2);
+    extension = 'json';
+  } else if (formato === 'csv') {
+    const cabeceras = Object.keys(data).join(',');
+    const valores = Object.values(data).join(',');
+    contenido = `${cabeceras}\n${valores}`;
+    extension = 'csv';
+  } else {
+    contenido = '--- Ficha de inscripción ---\n\n';
+    for (let campo in data) {
+      contenido += `${campo}: ${data[campo]}\n`;
+    }
+    extension = 'txt';
+  }
+
+  // Mostrar los datos por pantalla
+  alert(`Datos del formulario:\n\n${contenido}`);
+
+  // Descargar archivo generado
+  const blob = new Blob([contenido], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const enlace = document.createElement("a");
+  enlace.href = url;
+  enlace.download = `inscripcion.${extension}`;
+  enlace.click();
+  URL.revokeObjectURL(url);
+});
+</script>
 </body>
 </html>
