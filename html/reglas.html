@@ -111,12 +111,95 @@
             <li>Los cambios de jugadores se realizan de manera continua, permitiendo la inclusión de todos los jugadores en el equipo.</li>
         </ul>
     </section>
+      <section class="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <button class="faq-question">¿Quién puede jugar baloncesto en silla de ruedas?</button>
+            <div class="faq-answer">
+                <p>Pueden participar personas con discapacidad física que afecte sus extremidades inferiores. También existen categorías mixtas e inclusivas.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">¿Las reglas son iguales al baloncesto convencional?</button>
+            <div class="faq-answer">
+                <p>Las reglas son muy similares, pero se adaptan para el uso de la silla de ruedas, especialmente en lo referente a desplazamientos y faltas.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">¿Qué tipo de silla de ruedas se utiliza?</button>
+            <div class="faq-answer">
+                <p>Se utilizan sillas de ruedas deportivas, ligeras y resistentes, diseñadas específicamente para facilitar el movimiento y la seguridad en el juego.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">¿Cómo se clasifican los jugadores?</button>
+            <div class="faq-answer">
+                <p>Los jugadores se clasifican según su nivel de discapacidad, y cada equipo debe respetar un límite de puntos de clasificación en cancha.</p>
+            </div>
+        </div>
+       
+    </section>
     <section class="imagenes-responsive">
         <div class="imagenes-container">
             <img src="/imagenes/medidas-cancha-baloncesto-adaptado.gif" alt="Imagen 1" class="responsive-img">
             <img src="/imagenes/medida-silla.png" alt="Imagen 2" class="responsive-img">
         </div>
     </section>
+  
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.faq-question').forEach(function(otherBtn) {
+                    if (otherBtn !== btn) {
+                        otherBtn.classList.remove('active');
+                        otherBtn.nextElementSibling.style.display = 'none';
+                    }
+                });
+                const answer = btn.nextElementSibling;
+                const isOpen = btn.classList.contains('active');
+                if (!isOpen) {
+                    btn.classList.add('active');
+                    answer.style.display = 'block';
+                } else {
+                    btn.classList.remove('active');
+                    answer.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <style>
+    .faq {
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+    .faq-item {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+    .faq-question {
+        width: 100%;
+        text-align: left;
+        background: #f2f2f2;
+        border: none;
+        outline: none;
+        padding: 15px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background 0.2s;
+        color: #000;
+    }
+    .faq-question.active,
+    .faq-question:hover {
+        background: #e0e0e0;
+    }
+    .faq-answer {
+        display: none;
+        padding: 10px 15px 15px 15px;
+        background: #fafafa;
+        font-size: 1em;
+    }
+    </style>
     <div id="popup" class="popup">
         <span class="close" id="close-popup">&times;</span>
         <img class="popup-content" id="popup-img" alt="Popup Image">
