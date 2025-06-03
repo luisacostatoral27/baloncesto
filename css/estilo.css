@@ -262,12 +262,13 @@ p{
 .event-icon {
   margin-left: 5px;
   font-size: 20px;
-  vertical-align: middle;
+  vertical-align: middle; /* Centra verticalmente el icono dentro del elemento */
 }
 
 .event-icon.partido i {
    margin-right: 5px;
    color: darkorange;
+
 
 }
 .icono-entrenamiento {
