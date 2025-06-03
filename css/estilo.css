@@ -199,6 +199,12 @@ p{
   color: #663300; /* Marrón oscuro */
 
 }
+.derecho img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 .derecho ul{
   list-style-type: none;
 }
@@ -211,6 +217,9 @@ p{
 .derecho ul li a:hover {
   background-color: #FFDAB9; /* Melocotón claro */
   color: #000000; /* Negro */
+}
+.derecho img{
+  width: 100%;
 }
 
 #calendar-container {
