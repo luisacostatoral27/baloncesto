@@ -103,5 +103,5 @@ function resetEquipo() {
   totalPointsSpan.textContent = '0';
 
   // Mostrar confirmación
-  showPopup('El equipo ha sido reiniciado y los jugadores volvieron a su lugar original.');
+  showPopup('El equipo ha sido reiniciado.');
 }
