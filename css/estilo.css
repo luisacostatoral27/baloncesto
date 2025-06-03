@@ -30,7 +30,7 @@ body {
 .carousel-btn.prev {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 20px;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -53,7 +53,7 @@ body {
 .carousel-btn.next {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 20px;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -91,7 +91,7 @@ body {
 
 .carousel-wrapper {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
@@ -163,9 +163,9 @@ p{
 .calendario {
   width: 25%;
   position: absolute;
+  float: left;
   left: 0;
   top: 50px;
-  height: calc(100vh - 50px);
   padding: 20px;
   overflow-y: auto;
   background-color: #2E8B57; /* Verde oscuro para un buen contraste */
@@ -190,9 +190,9 @@ p{
 .derecho {
   width: 25%;
   position:absolute;
+  float: right;
   right: 0;
   top: 50px;
-  height: calc(100vh - 50px);
   padding: 50px;
   overflow-y: auto;
   background-color: #FFF4E6; /* Naranja claro */
