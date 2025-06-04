@@ -3,22 +3,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll('.carousel-container img');
     const totalSlides = slides.length;
 
-    // Crear dinámicamente el contenedor de indicadores
-    const indicatorsContainer = document.createElement("div");
-    indicatorsContainer.id = "indicators";
-    indicatorsContainer.classList.add("carousel-indicators");
-    document.querySelector(".carousel-wrapper").appendChild(indicatorsContainer);
-
-    const indicators = document.getElementById("indicators");
+    // Crear dinámicamente el contenedor para los puntos
+    const dotsContainer = document.createElement("div");
+    dotsContainer.id = "image-dots";
+    dotsContainer.style.position = "absolute";
+    dotsContainer.style.bottom = "10px";
+    dotsContainer.style.width = "100%";
+    dotsContainer.style.textAlign = "center";
+    dotsContainer.style.zIndex = "10";
+    dotsContainer.style.color = "white";
+    dotsContainer.style.fontSize = "20px";
+    dotsContainer.style.fontWeight = "bold";
+    dotsContainer.style.textShadow = "0 0 5px black";
+    document.querySelector(".carousel-wrapper").appendChild(dotsContainer);
 
     let autoSlideInterval;
 
-    // Función para actualizar el carrusel
+    // Función para actualizar los puntos y el carrusel
     function updateCarousel() {
         const container = document.getElementById("carousel-container");
         container.style.transform = `translateX(-${currentSlide * 100}%)`;
-        [...indicators.children].forEach((dot, idx) => {
-            dot.classList.toggle("active", idx === currentSlide);
+
+        // Actualizar puntos
+        [...dotsContainer.children].forEach((dot, idx) => {
+            dot.style.opacity = idx === currentSlide ? "1" : "0.5"; // Resaltar el punto activo
         });
     }
 
@@ -34,19 +42,20 @@ document.addEventListener("DOMContentLoaded", () => {
         autoSlideInterval = setInterval(() => moverCarrusel(1), 5000);
     }
 
-    // Función para crear los indicadores
-    function crearIndicadores() {
+    // Crear los puntos "º º º"
+    function crearPuntos() {
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement("span");
-            dot.setAttribute("data-slide-to", i);
-            dot.classList.add("dot");
-            if (i === 0) dot.classList.add("active");
+            dot.textContent = "º";
+            dot.style.cursor = "pointer";
+            dot.style.margin = "0 5px";
+            dot.style.opacity = i === 0 ? "1" : "0.5"; // Resaltar el primer punto
             dot.onclick = () => {
                 currentSlide = i;
                 updateCarousel();
                 resetAutoSlide();
             };
-            indicators.appendChild(dot);
+            dotsContainer.appendChild(dot);
         }
     }
 
@@ -62,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Inicialización del carrusel
-    crearIndicadores();
+    crearPuntos();
     updateCarousel();
     autoSlideInterval = setInterval(() => moverCarrusel(1), 5000);
 });
