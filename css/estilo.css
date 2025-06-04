@@ -295,17 +295,6 @@ footer p{
   text-align: center;
   padding: 10px 0;
 }
-.social-media{
-  display: flex;
-  justify-content: left;
-  margin-top: 10px;
-
-}
-
-.social-media li {
-  margin: 0 5px;
-  margin-bottom: 20px;
-}
 
 
 /* --- RESPONSIVE DESIGN --- */
