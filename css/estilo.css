@@ -378,6 +378,9 @@ footer p{
   p {
     padding: 10px;
   }
+  .derecho ul li a {
+    font-size: 25px;
+  }
 }
 
 
