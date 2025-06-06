@@ -1,4 +1,71 @@
-@media (max-width: 1024px) {
+/* ===========================
+   📱 MOBILE (hasta 450px)
+   =========================== */
+@media (max-width: 450px) {
+  body {
+    padding: 0 5px;
+  }
+
+  .calendario,
+  .derecho {
+    position: relative !important;
+    float: none !important;
+    width: 100% !important;
+    top: auto !important;
+    padding: 10px !important;
+    margin-bottom: 20px;
+  }
+
+  .noticias-principales {
+    width: 100% !important;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .noticias-principales iframe {
+    height: 200px;
+  }
+
+  .noticias-principales h2 {
+    font-size: 18px;
+  }
+
+  .derecho ul li a {
+    font-size: 14px;
+  }
+
+  p {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  footer p {
+    font-size: 13px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .flipper {
+    width: 100%;
+    height: 520px;
+  }
+
+  form button {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .logo {
+    visibility: hidden;
+  }
+
   .menu {
     display: none;
     flex-direction: column;
@@ -48,25 +115,96 @@
   .menu.active {
     display: flex;
   }
-  .logo {
+  .timeline::after {
     display: none;
   }
 }
 
-  /* Tablas en móviles */
-  @media (max-width: 768px) {
-    .table-wrapper {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      width: 500px;
-    }
-  
-    #grafica, #barras {
-      width: 90%;
-    }
+
+/* ===========================
+   📲 TABLET (451px – 1023px)
+   =========================== */
+@media (min-width: 451px) and (max-width: 1023px) {
+  .carousel-section {
+    max-width: 100%;
+    margin: 10px auto;
   }
-  
-@media (min-width: 768px) and (max-width: 1024px) {
+
+  .noticias-principales {
+    max-width: 100%;
+    padding: 10px;
+    background-color: #FFA500;
+  }
+
+  .noticias-principales iframe {
+    height: 450px;
+  }
+
+  .side-sections {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .calendario,
+  .derecho {
+    position: relative !important;
+    float: none !important;
+    width: 100% !important;
+    top: auto !important;
+    padding: 10px !important;
+    margin-bottom: 20px;
+  }
+
+  #calendar {
+    width: 105%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    padding-bottom: 50px;
+    padding-right: 20px;
+  }
+
+  .derecho ul li a {
+    font-size: 25px;
+  }
+
+  .timeline::after {
+    left: 8px;
+
+  }
+
+  .timeline-item {
+    width: 100%;
+    margin: 20px 0;
+    padding-left: 30px;
+  }
+
+  .timeline-item::before {
+    top: 20px;
+    left: 0;
+    margin-left: 0;
+  }
+
+  section {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f4f4f4;
+    border: 2px solid #ff4500;
+    color: #333;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  ul {
+    margin-left: 15px;
+  }
+
+  footer {
+    padding: 8px;
+  }
+
   .gallery {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -75,9 +213,100 @@
     width: 100%;
     height: 500px;
   }
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 500px;
+  }
+
+  #grafica, #barras {
+    width: 90%;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    height: calc(100vh - 60px);
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .menu li a {
+    padding: 15px;
+    text-align: center;
+    display: block;
+  }
+
+  .menu li:hover .submenu {
+    position: absolute;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .logo {
+    display: none;
+  }
 }
 
-@media (min-width: 1025px) and (max-width: 1523px) {
+
+/* ===========================
+   💻 DESKTOP (1024px en adelante)
+   =========================== */
+@media (min-width: 1024px) {
+  .carousel-section {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  .noticias-principales {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .side-sections {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .calendario,
+  .derecho {
+    position: absolute;
+    width: 25%;
+    height: auto;
+    padding: 20px;
+  }
+
   .gallery {
     grid-template-columns: repeat(3, 1fr);
     margin-right: 240px;
@@ -87,100 +316,13 @@
     width: 100%;
     height: 500px;
   }
+
+  section {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  footer {
+    font-size: 1.2em;
+  }
 }
-
-  
-  /* Galería para móviles más pequeños */
-  @media (max-width: 480px) {
-    .gallery {
-      grid-template-columns: 1fr;
-    }
-  
-    .flipper {
-      width: 100%;
-      height: 520px;
-    }
-  }
-  
-  /* Historia (botones grandes en móviles) */
-  @media (max-width: 480px) {
-    form button {
-      font-size: 18px;
-      padding: 15px;
-    }
-  }
-  
-  /* Ocultar logo en móviles */
-  @media (max-width: 480px) {
-    .logo {
-      visibility: hidden;
-    }
-  }
-  
-/* Responsive para móvil */
-@media (max-width: 768px) {
-    .timeline::after {
-        left: 8px;
-        display: none;
-    }
-
-    .timeline-item {
-        width: 100%;
-        margin: 20px 0;
-        padding-left: 30px;
-    }
-
-    .timeline-item::before {
-        top: 20px;
-        left: 0;
-        margin-left: 0;
-    }
-
-}
-
-  /* Reglamentos en móviles */
-  @media (max-width: 768px) {
-    section {
-      padding: 15px;
-      margin-bottom: 15px;
-      background-color: #f4f4f4;
-      border: 2px solid #ff4500;
-      color: #333;
-    }
-  
-    h2 {
-      font-size: 1.5em;
-    }
-  
-    ul {
-      margin-left: 15px;
-    }
-  
-    footer {
-      padding: 8px;
-    }
-  }
-  
-  /* Reglamentos en móviles pequeños */
-  @media (max-width: 480px) {
-    section {
-      padding: 10px;
-    }
-  
-    h2 {
-      font-size: 1.2em;
-    }
-  }
-  
-  /* Escritorio */
-  @media (min-width: 1200px) {
-    section {
-      width: 80%;
-      margin: 0 auto;
-    }
-  
-    footer {
-      font-size: 1.2em;
-    }
-  }
-  
