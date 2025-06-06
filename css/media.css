@@ -80,6 +80,7 @@
 @media (min-width: 1025px) and (max-width: 1523px) {
   .gallery {
     grid-template-columns: repeat(3, 1fr);
+    margin-right: 240px;
   }
 
   .flipper {
