@@ -218,6 +218,7 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     width: 500px;
+    margin: 0 auto;
   }
 
   #grafica, #barras {
