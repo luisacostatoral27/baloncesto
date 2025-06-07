@@ -1,9 +1,7 @@
 let momentos = [];
 
 async function cargarMomentos() {
-  const res = await fetch(document.body.dataset.json); // Obtener la URL del JSON desde el atributo data-json del body await fetch(res) hace la petición al servidor document.body.dataset.json hace referencia al atributo data-json del body;
-
-  // Cargar los momentos desde el JSON
+  const res = await fetch(document.body.dataset.json); // Obtener la URL del JSON desde el atributo data-json del body await fetch(res) awit hace una petición a la URL del JSON;
   momentos = await res.json();
 
   // Mostrar buscador si hay descripciones (para mejores_momentos.html)
