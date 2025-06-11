@@ -218,7 +218,9 @@ p{
   background-color: #FFDAB9; /* Melocotón claro */
   color: #000000; /* Negro */
 }
-
+.derecho img:hover {
+  transform: scale(1.05);
+}
 
 #calendar-container {
   max-width: 600px;
