@@ -331,7 +331,56 @@ footer p{
   text-align: center;
   padding: 10px 0;
 }
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .carousel,
+  .carousel-wrapper {
+    
+    max-width: 550px;
+    justify-content: center;
+    }
 
+  .noticias-principales {
+    max-width: 550px;
+    padding: 16px;
+    font-size: 17px;
+  }
+
+  .noticias-principales iframe {
+    max-width: 550px;
+    height: 320px;
+  }
+
+  .calendario
+   {
+    padding: 10px;
+    font-size: 15px;
+    width: 28%;
+    padding-top: 20px;
+
+  }
+  .derecho{
+    padding: 10px;
+    font-size: 15px;
+    width: 28%;
+    width: 28%;
+  }
+  .derecho img{
+    width: 100%;
+    height: auto;
+  }
+
+
+  .derecho ul li a {
+    font-size: 15px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  p {
+    font-size: 20px;
+    padding: 18px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1023px) {
   .carousel-section {
     max-width: 100%;
