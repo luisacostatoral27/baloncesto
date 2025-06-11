@@ -52,6 +52,9 @@
         margin: 1rem 0;
         box-shadow: 0 2px 8px rgba(60,60,120,0.08);
     }
+    .modalidad:hover {
+    transform: scale(1.03); /* Efecto de zoom al pasar el mouse */
+}
 
     @media (max-width: 900px) {
 
