@@ -4,16 +4,13 @@ body {
     padding: 0;
     text-align: center;
 }
-div p {
-    text-align: center;
-    padding-top: 10px;
 
-}
 /* Estilo para la tabla */
 table {
     width: 80%;
-    border-collapse: collapse;
-    margin: 20px auto;
+    border-collapse: collapse;  /* Colapsa los bordes de la tabla */
+    margin: 20px auto; /* Centra la tabla en la página */
+
 
 }
 
@@ -24,9 +21,22 @@ th, td {
 }
 
 /* Estilo para los gráficos */
-#grafica, #barras {
-    width: 100%;
-    max-width: 600px; /* Ajusta al tamaño máximo que desees */
-    margin: 0 auto;
+.graficos-contenedor {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
 }
+
+.circulo, .barras {
+  flex: 1 1 45%;
+  max-width: 45%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+.ediciones{
+    text-align: center;
+}
+
 
