@@ -39,7 +39,7 @@ function populateMonthAndYear() {
         option.textContent = year; // Establecer el texto visible del año
         yearSelect.appendChild(option); // Agregar la opción de año al elemento <select> de años
     }
-    const holidays = [
+    let holidays = [
         { day: 1, month: 0 }, // Año Nuevo (1 de Enero)
         { day: 6, month: 0 }, // Reyes Magos (6 de Enero)
         { day: 17, month: 3},
