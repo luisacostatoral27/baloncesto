@@ -118,6 +118,17 @@
   .timeline::after {
     display: none;
   }
+  .graficos-contenedor {
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.circulo, .barras {
+  max-width: 100%;
+  flex: 1 1 100%;
+}
+
 }
 
 
@@ -221,9 +232,17 @@
     margin: 0 auto;
   }
 
-  #grafica, #barras {
-    width: 90%;
-  }
+.graficos-contenedor {
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.circulo, .barras {
+  max-width: 100%;
+  flex: 1 1 100%;
+}
+
 
   .menu {
     display: none;
