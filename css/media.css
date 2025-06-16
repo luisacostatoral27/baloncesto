@@ -234,12 +234,6 @@
     border-radius: 15px;
   }
 
-   .table-wrapper {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      width: 500px;
-    }
-  
   .circulo, .barras {
     flex: 1 1 100%; /* Ocupa todo el ancho en móviles */
     max-width: 100%;
