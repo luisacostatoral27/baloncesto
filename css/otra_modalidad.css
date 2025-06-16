@@ -55,6 +55,33 @@
     .modalidad:hover {
     transform: scale(1.03); /* Efecto de zoom al pasar el mouse */
 }
+.btn-pdf {
+    display: inline-flex;
+    align-items: center;
+    background-color: #d32f2f;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.btn-pdf i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.btn-pdf:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+
 
     @media (max-width: 900px) {
 
