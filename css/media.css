@@ -125,11 +125,6 @@
   .timeline::after {
     display: none;
   }
-  .graficos-contenedor {
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-}
 
 .circulo, .barras {
   max-width: 100%;
