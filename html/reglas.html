@@ -145,79 +145,7 @@
             <img src="/imagenes/medida-silla.png" alt="Imagen 2" class="responsive-img">
         </div>
     </section>
-  
-    <script>
-        document.querySelectorAll('.faq-question').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.faq-question').forEach(function(otherBtn) {
-                    if (otherBtn !== btn) {
-                        otherBtn.classList.remove('active');
-                        otherBtn.nextElementSibling.style.display = 'none';
-                    }
-                });
-                const answer = btn.nextElementSibling;
-                const isOpen = btn.classList.contains('active');
-                if (!isOpen) {
-                    btn.classList.add('active');
-                    answer.style.display = 'block';
-                } else {
-                    btn.classList.remove('active');
-                    answer.style.display = 'none';
-                }
-            });
-        });
-        
-document.addEventListener('click', function(event) {
-    const openBtn = document.querySelector('.faq-question.active');
-    if (openBtn && !event.target.classList.contains('faq-question')) {
-        openBtn.classList.remove('active');
-        openBtn.nextElementSibling.style.display = 'none';
-    }
-});
 
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const openBtn = document.querySelector('.faq-question.active');
-        if (openBtn) {
-            openBtn.classList.remove('active');
-            openBtn.nextElementSibling.style.display = 'none';
-        }
-    }
-});
-    </script>
-    <style>
-    .faq {
-        max-width: 700px;
-        margin: 40px auto;
-        padding: 20px;
-    }
-    .faq-item {
-        margin-bottom: 15px;
-        border-bottom: 1px solid #ccc;
-    }
-    .faq-question {
-        width: 100%;
-        text-align: left;
-        background: #f2f2f2;
-        border: none;
-        outline: none;
-        padding: 15px;
-        font-size: 1.1em;
-        cursor: pointer;
-        transition: background 0.2s;
-        color: #000;
-    }
-    .faq-question.active,
-    .faq-question:hover {
-        background: #e0e0e0;
-    }
-    .faq-answer {
-        display: none;
-        padding: 10px 15px 15px 15px;
-        background: #fafafa;
-        font-size: 1em;
-    }
-    </style>
     <div id="popup" class="popup">
         <span class="close" id="close-popup">&times;</span>
         <img class="popup-content" id="popup-img" alt="Popup Image">
