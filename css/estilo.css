@@ -166,7 +166,7 @@ p{
   top: 50px;
   padding: 20px;
   overflow-y: auto;
-  background-color: #2E8B57; /* Verde oscuro para un buen contraste */
+  background-color: #dae2c3; /* Verde oscuro para un buen contraste */
   color: white;
 }
 #calendar th {
